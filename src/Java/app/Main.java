@@ -12,16 +12,14 @@ public class Main extends JFrame implements ActionListener {
     JButton submit;
 
     Main() {
-        // ======= LOGO =======
-        // Carregue a imagem
         ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("logo.png"));
 
-        // Redimensionando a logo para se ajustar ao tamanho adequado
-        Image img = originalIcon.getImage(); // Obtemos a imagem da logo
-        Image resizedImg = img.getScaledInstance(200, 100, Image.SCALE_SMOOTH); // Redimensiona a logo
-        ImageIcon resizedIcon = new ImageIcon(resizedImg); // Cria um novo ImageIcon com a logo redimensionada
 
-        JLabel logoLabel = new JLabel(resizedIcon, JLabel.CENTER); // Exibe a logo redimensionada no centro
+        Image img = originalIcon.getImage();
+        Image resizedImg = img.getScaledInstance(200, 100, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon = new ImageIcon(resizedImg);
+
+        JLabel logoLabel = new JLabel(resizedIcon, JLabel.CENTER); //
 
         // ======= Labels e campos =======
         user_label = new JLabel("User Name :");
@@ -48,16 +46,16 @@ public class Main extends JFrame implements ActionListener {
 
         // ======= Painel principal =======
         JPanel mainPanel = new JPanel(new BorderLayout());
-        mainPanel.add(logoLabel, BorderLayout.NORTH); // Adiciona a logo na parte superior
-        mainPanel.add(panel, BorderLayout.CENTER); // Adiciona o painel de login no centro
+        mainPanel.add(logoLabel, BorderLayout.NORTH);
+        mainPanel.add(panel, BorderLayout.CENTER);
 
         // ======= Janela =======
         setTitle("Please Login Here");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(mainPanel);
-        setSize(400, 300); // Define o tamanho da janela para acomodar a logo e o login
-        setLocationRelativeTo(null); // Centraliza a janela
-        setVisible(true); // Torna a janela visível
+        setSize(400, 300);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     public static void main(String[] args) {
